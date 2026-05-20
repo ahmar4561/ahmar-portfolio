@@ -70,15 +70,16 @@ export function Contact() {
               </p>
             </div>
 
+            {/* Direct strings to bypass any configuration key errors */}
             <div className="mt-8 space-y-4">
               <Button variant="glass" className="w-full justify-start" asChild>
-                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/923183015403" target="_blank" rel="noopener noreferrer">
                   <MessageCircle size={20} className="text-emerald-400" />
                   Chat on WhatsApp
                 </a>
               </Button>
               <Button variant="glass" className="w-full justify-start" asChild>
-                <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ahmar4561" target="_blank" rel="noopener noreferrer">
                   View GitHub Profile
                 </a>
               </Button>

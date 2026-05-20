@@ -5,7 +5,6 @@ import {
   FiverrIcon,
   GithubIcon,
   LinkedinIcon,
-  PortfolioIcon,
   UpworkIcon,
   WhatsappIcon,
 } from "@/components/icons/social-icons";
@@ -20,7 +19,6 @@ const iconMap: Record<SocialPlatform, ElementType> = {
   whatsapp: WhatsappIcon,
   fiverr: FiverrIcon,
   upwork: UpworkIcon,
-  portfolio: PortfolioIcon,
 };
 
 interface SocialLinksProps {
@@ -44,6 +42,9 @@ export function SocialLinks({
     <div className={cn("flex flex-wrap gap-3", className)}>
       {links.map(({ platform, href, label }) => {
         const Icon = iconMap[platform];
+        // Agar koi icon map nahi hota to crash na ho
+        if (!Icon) return null;
+
         return (
           <a
             key={platform}

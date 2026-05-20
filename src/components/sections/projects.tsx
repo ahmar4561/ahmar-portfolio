@@ -7,16 +7,15 @@ import { GithubIcon } from "@/components/icons/social-icons";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 
-// Complete and optimized projects list with your AI Final Year Project on top
 const realProjects = [
   {
     title: "Intelligent Food Advisor",
     period: "Feb 2025 - Sep 2025",
     description: "An advanced AI system that features EfficientNetV2B2 for food image classification and utilizes the Mistral 7B LLM to generate personalized health insights based on dynamic nutritional data.",
     tech: ["Python", "FastAPI", "TensorFlow", "Mistral 7B", "AI/ML"],
-    imagePath: "/food-advisor.png", // Make sure to drop your project image in public folder with this name
-    liveUrl: "https://youtu.be/M5WwUZ6wkmI", // Your real YouTube demo link
-    githubUrl: "https://github.com/ahmar4561", // Links directly to your GitHub profile
+    imagePath: "/food-advisor.png",
+    liveUrl: "https://youtu.be/M5WwUZ6wkmI",
+    githubUrl: "https://github.com/ahmar4561",
     isVideo: true,
   },
   {
@@ -73,27 +72,27 @@ const realProjects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative py-16 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeading
           label="Portfolio"
           title="Featured Projects"
           description="A showcase of my best work — real applications built with modern engineering practices"
         />
 
-        <motion.div className="grid gap-8 lg:grid-cols-2">
+        <motion.div className="grid gap-6 lg:grid-cols-2">
           {realProjects.map((project, i) => (
             <motion.article
               key={project.title}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-violet-500/30 hover:shadow-2xl hover:shadow-violet-500/10"
-              initial={{ opacity: 0, y: 40 }}
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-violet-500/30 hover:shadow-2xl hover:shadow-violet-500/10"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
+              transition={{ delay: i * 0.05, duration: 0.6 }}
               whileHover={{ y: -4 }}
             >
-              {/* Project Image Container */}
-              <div className="relative h-56 overflow-hidden bg-[#0c0c14] sm:h-64">
+              {/* Project Image Container - Optimized Mobile Height */}
+              <div className="relative h-40 overflow-hidden bg-[#0c0c14] sm:h-64">
                 <Image
                   src={project.imagePath}
                   alt={project.title}
@@ -104,8 +103,8 @@ export function Projects() {
                   unoptimized
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="rounded-2xl border border-white/20 bg-black/50 px-6 py-4 backdrop-blur-md">
-                    <p className="text-center text-lg font-bold text-white drop-shadow-lg">
+                  <div className="rounded-xl border border-white/20 bg-black/50 px-4 py-2 backdrop-blur-md">
+                    <p className="text-center text-xs sm:text-sm font-bold text-white drop-shadow-lg">
                       {project.isVideo ? "Watch Demo Video" : "View Project"}
                     </p>
                   </div>
@@ -113,53 +112,58 @@ export function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-80" />
               </div>
 
-              {/* Project Content */}
-              <div className="p-6 sm:p-8">
-                <div className="mb-2 flex flex-wrap items-center gap-2">
-                  <h3 className="text-xl font-bold text-white sm:text-2xl">
+              {/* Project Content - Streamlined for Premium Spacing */}
+              <div className="p-4 sm:p-8">
+                <div className="mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-base sm:text-2xl font-bold text-white tracking-tight">
                     {project.title}
                   </h3>
                   {project.period && (
-                    <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-white/50">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] sm:text-xs text-white/40 font-light">
                       {project.period}
                     </span>
                   )}
                 </div>
-                <p className="mt-3 text-white/60 leading-relaxed">
+                
+                <p className="mt-2 text-xs sm:text-base text-white/60 leading-relaxed font-normal">
                   {project.description}
                 </p>
 
-                <div className="mt-4 flex flex-wrap gap-2">
+                {/* Tech Badges Container */}
+                <div className="mt-3 flex flex-wrap gap-1.5">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-violet-200"
+                      className="rounded-md border border-white/5 bg-white/5 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-violet-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-3">
+                {/* Compact Side-by-Side Buttons Matrix for Mobile Layout */}
+                <div className="mt-5 flex items-center gap-2">
                   {project.liveUrl !== "#" && (
-                    <Button asChild>
+                    <Button size="sm" asChild className="h-8.5 px-3.5 rounded-lg text-xs font-medium flex-1 sm:flex-initial">
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5"
                       >
-                        {project.isVideo ? <PlayCircle size={16} /> : <ExternalLink size={16} />}
+                        {project.isVideo ? <PlayCircle size={14} /> : <ExternalLink size={14} />}
                         {project.isVideo ? "Watch Demo" : "Live Demo"}
                       </a>
                     </Button>
                   )}
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" size="sm" asChild className="h-8.5 px-3.5 rounded-lg text-xs font-medium flex-1 sm:flex-initial border-white/10 bg-white/5 text-white/80 hover:bg-white/10">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5"
                     >
-                      <GithubIcon size={16} />
+                      <GithubIcon size={14} />
                       GitHub
                     </a>
                   </Button>

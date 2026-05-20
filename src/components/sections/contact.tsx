@@ -70,7 +70,6 @@ export function Contact() {
               </p>
             </div>
 
-            {/* Direct strings to bypass any configuration key errors */}
             <div className="mt-8 space-y-4">
               <Button variant="glass" className="w-full justify-start" asChild>
                 <a href="https://wa.me/923183015403" target="_blank" rel="noopener noreferrer">

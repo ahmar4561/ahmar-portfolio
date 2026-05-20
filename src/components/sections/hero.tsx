@@ -78,8 +78,6 @@ export function Hero() {
                 "linkedin",
                 "email",
                 "whatsapp",
-                "facebook",
-                "instagram",
                 "fiverr",
                 "upwork",
               ]}

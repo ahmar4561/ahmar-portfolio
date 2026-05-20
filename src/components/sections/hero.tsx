@@ -148,5 +148,5 @@ export function Hero() {
         <ArrowDown size={24} />
       </motion.a>
     </section>
-  );
+  );  
 }

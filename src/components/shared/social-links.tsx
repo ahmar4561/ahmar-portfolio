@@ -2,10 +2,8 @@
 
 import { Mail } from "lucide-react";
 import {
-  FacebookIcon,
   FiverrIcon,
   GithubIcon,
-  InstagramIcon,
   LinkedinIcon,
   PortfolioIcon,
   UpworkIcon,
@@ -20,8 +18,6 @@ const iconMap: Record<SocialPlatform, ElementType> = {
   linkedin: LinkedinIcon,
   email: Mail,
   whatsapp: WhatsappIcon,
-  facebook: FacebookIcon,
-  instagram: InstagramIcon,
   fiverr: FiverrIcon,
   upwork: UpworkIcon,
   portfolio: PortfolioIcon,
